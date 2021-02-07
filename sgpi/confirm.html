@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/form-validation.css">
+    <title>SGPI | Confirm</title>
+
+    <style>
+        #navbarCollapse a {
+            margin: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Verena</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="text-center collapse navbar-collapse" id="navbarCollapse">
+                <a class="text-light aria-current=" href="index.html"><img src="img/arrow-left.svg" alt="Voltar"
+                        id="back" width="25px"></a>
+                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
+                        width="25px"></a>
+                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
+                <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
+                        width="25px"></a>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </header>
+    <main>
+
+        <div class="jumbotron container">
+            <h1 class="display-4">Olá, ${name}</h1>
+            <p class="lead">Por gentileza, confirme seus dados para notificação em caso de erros.</p>
+            <hr class="my-4">
+            <small class="text-muted">Se hover algum dado errado, uma notificação será enviada ao sistema. Se a
+                veracidade for apurrada, receberá os passos de como deve prosseguir para a correção do mesmo.</small>
+        </div>
+
+        <div class="container">
+            <form name="personalData">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="col-form-label" for="name">Nome</label>
+                            <input class="form-control" id="name" type="text" placeholder="Nome"
+                                value="${document.name}" required>
+                        </div>
+
+                        <div class="col">
+                            <label class="col-form-label" for="number">Bilhete de Identidade</label>
+                            <input class="form-control" id="number" type="number" placeholder="Número"
+                                value="${document.number}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <fieldset class="col">
+                            <legend class="col-form-label">Sexo</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="male" name="sex" checked required>
+                                <label class="form-check-label" for="male">Masculino</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="female" name="sex" required>
+                                <label class="form-check-label" for="female">Femenino</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="col">
+                            <legend class="col-form-label">Estado civil</legend>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="single" name="maritalStatus" checked
+                                    required>
+                                <label class="form-check-label" for="single">Solteiro</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="maried" name="maritalStatus" required>
+                                <label class="form-check-label" for="maried">Casado</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label class="col-form-label" for="birth">Data de nascimento</label>
+                            <input class="form-control" id="birth" name="birth" type="date" value="1998-12-20" required>
+                        </div>
+
+                        <div class="col-sm">
+                            <label class="col-form-label" for="height">Altura</label>
+                            <input class="form-control" id="height" name="height" type="number" placeholder="Altura"
+                                value="${document.height}" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="col-form-label" for="place">Naturalidade</label>
+                            <input class="form-control" id="place" name="place" type="text" placeholder="Naturalidade"
+                                value="${document.birth_place}" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="col-form-label" for="address">Endereço</label>
+                            <input class="form-control" id="address" name="address" type="text" placeholder="Endereço"
+                                value="${document.address" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label class="col-form-label" for="father">Nome do pai</label>
+                            <input class="form-control" id="father" name="father" type="text" placeholder="Nome do pai"
+                                value="${document.fatherName" required>
+                        </div>
+
+                        <div class="col-sm">
+                            <label class="col-form-label" for="mother">Nome da mãe</label>
+                            <input class="form-control" id="mother" name="mother" type="text" placeholder="Nome da mãe"
+                                value="${document.motherName}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="col-form-label" for="issuing">Emissor</label>
+                            <input class="form-control" id="issuing" name="issuing" type="text" placeholder="Emissor"
+                                value="${document.issuePlace}" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="col-form-label" for="issuance">Data de emissão</label>
+                            <input class="form-control" id="issuance" name="issuance" type="date"
+                                value="${document.issueDate}">
+                        </div>
+                        <div class="col">
+                            <label class="col-form-label" for="expiry">Data de validade</label>
+                            <input class="form-control" id="expiry" name="expiry" type="date"
+                                value="${document.expiryDate}" required>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <small class="form-text text-muted">Obrigado por conferir seus dados. Se estiver tudo certo click em
+                    Confirmar</small>
+                <hr class="my-4">
+                <button class="btn btn-primary w-100" type="submit">Confirmar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container ">
+            <p class="mt-5 mb-3 text-muted text text-center">&copy; 2020-2021</p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/form-validation.js"></script>
+
+</body>
+
+</html>

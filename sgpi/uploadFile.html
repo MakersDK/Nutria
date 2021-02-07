@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <!--<link rel="manifest" href="manifest.json">-->
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Upload</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+            text-align: center;
+        }
+
+        #navbarCollapse a {
+            margin: 12px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+
+        #image {
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Verena</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="text-center collapse navbar-collapse" id="navbarCollapse">
+                <a class="text-light aria-current=" href="conta.html"><img src="img/arrow-left.svg" alt="Voltar"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
+                        width="25px"></a>
+                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
+                <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
+                        width="25px"></a>
+            </div>
+        </nav>
+    </header>
+    <div id="uploaded" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <img src="img/cloud-upload.svg" alt="Fazer upload" id="image">
+            <h1 class="display-4 fw-normal">Faça Upload</h1>
+            <p class="lead fw-normal">Garanta uma boa vistoria e analise dos seus projectos, Partilhe seus projectos com
+                o formador responsável por analisar e garantir classificação do projecto</p>
+            <form action="#" method="POST">
+                <input class="btn btn-primary " type="submit" value="Pedir Acopanhamento"></input>
+                <input type="file" name="upload" id="files" accept="image/*">
+            </form>
+        </div>
+    </div>
+    <footer class="bg-dark">
+        <div class="container">
+            <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        let img = window.document.getElementById("image")
+        let file = window.document.getElementById("files")
+
+        img.addEventListener('click', () => {
+            file.click();
+        })
+        file.addEventListener('change', (event) => {
+            let reader = new FileReader()
+            reader.onload = () => {
+                img.src = reader.result
+            }
+            reader.readAsDataURL(file.files[0])
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <!--<link rel="manifest" href="manifest.json">-->
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/form-validation.css">
+    <title>Login</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .form-signup {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .checkbox,
+        .form-group {
+            text-align: left;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .title {
+            font-weight: 900;
+            font-size: 40px;
+        }
+
+        #navbarCollapse a {
+            margin: 12px;
+        }
+
+        .link a {
+            text-decoration: none;
+        }
+
+        .link {
+            text-align: right;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Verena</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="text-center collapse navbar-collapse" id="navbarCollapse">
+                <a class="text-light aria-current=" href="index.html"><img src="img/arrow-left.svg" alt="Voltar"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
+                        width="25px"></a>
+                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
+                <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
+                        width="25px"></a>
+            </div>
+        </nav>
+    </header>
+    <main class="form-signup">
+        <h1 class="display-4 fw-normal text-center">Inicie sessão</h1><br>
+        <form action="passwordconta.html" method="POST" class="needs-validation" novalidate>
+            <div class="input-group form-group">
+                <label class="visually-hidden" for="inputNumber">Número do documento</label>
+                <input class="form-control form-control-lg" type="email" name="email" id="inputNumber"
+                    placeholder="Email ou Username" aria-describedby="emailAddon" required>
+                <small class="form-text text-muted">O Email ou Username que usou ao criar a conta do Verena</small>
+            </div>
+            <div class="link">
+                <a href="#"> Esqueceu-se do email?</a>
+            </div>
+            <hr>
+            <div class=link>
+                <a href="newconta.html">Criar conta</a>
+            </div>
+            <button class="btn btn-primary btn-lg w-100" type="submit">Seguinte</button>
+        </form>
+    </main>
+    <footer class="bg-dark">
+        <div class="container">
+            <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+
+</html>
+<!--
+        <main class="form-signup">
+        <form action="pagelogin.html" method="POST" class="needs-validation" novalidate>
+                <h1 class=" title text-center mb-3">
+                    Login
+                </h1>
+                <label class="visually-hidden" for="inputNumber">Email Address</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="emailAddon">@</span>
+                    <input class="form-control  mb-2" type="email" name="email" id="inputEmail" placeholder="Enter Email" aria-describedby="emailAddon" required>
+                </div>
+                <label class="visually-hidden" for="inputpasswd">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="passwdAddon"><img src="img/lock.svg"></span>
+                    <input class="form-control " type="password" name="passwd" id="inputpasswd" placeholder="********" minlength="8" maxlength="20" aria-describedby="passwdAddon" required>
+                </div>
+            <div class=link>
+                <a href="newconta.html">Create an account</a>
+                <hr>
+            </div>
+            <input class="btn btn-primary w-100" type="submit"></input>
+        </form>
+    </main>
+-->
