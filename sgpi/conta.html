@@ -58,6 +58,14 @@
         .link {
             text-align: right;
         }
+        #inputEmail {
+            border-radius: 10px;
+        }
+
+        #inputEmail:focus {
+            border-radius: 10px;
+            border-color: white;
+        }
 
         .navbar-toggler {
             border: none;
@@ -88,11 +96,11 @@
         </nav>
     </header>
     <main class="form-signup">
-        <h1 class="display-4 fw-normal text-center">Inicie sessão</h1><br>
+        <h1 class="display- fw-normal text-center">Inicie sessão</h1><br>
         <form action="passwordconta.html" method="POST" class="needs-validation" novalidate>
             <div class="input-group form-group">
-                <label class="visually-hidden" for="inputNumber">Número do documento</label>
-                <input class="form-control form-control-lg" type="email" name="email" id="inputNumber"
+                <label class="visually-hidden" for="inputEmail"></label>
+                <input class="form-control form-control-lg" type="email" name="email" id="inputEmail"
                     placeholder="Email ou Username" aria-describedby="emailAddon" required>
                 <small class="form-text text-muted">O Email ou Username que usou ao criar a conta do Verena</small>
             </div>
@@ -103,7 +111,7 @@
             <div class=link>
                 <a href="newconta.html">Criar conta</a>
             </div>
-            <button class="btn btn-primary btn-lg w-100" type="submit">Seguinte</button>
+            <button class="btn btn-primary w-100" type="submit">Seguinte</button>
         </form>
     </main>
     <footer class="bg-dark">
