@@ -8,7 +8,8 @@
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/form-validation.css">
-    <title>Verena</title>
+    <link rel="stylesheet" href="css/signin.css">
+    <title>Login</title>
 
     <style>
         html,
@@ -51,12 +52,16 @@
             margin: 12px;
         }
 
-        .link label a {
-            text-decoration: none;
-        }
-
         .navbar-toggler {
             border: none;
+        }
+
+        .showpass {
+            margin-top: 5px;
+        }
+
+        #check {
+            margin-right: 10px;
         }
     </style>
 
@@ -81,7 +86,7 @@
                 <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
                         width="25px"></a>
             </div>
-        </nav>>
+        </nav>
     </header>
     <main class="form-signup">
         <form action="pagelogin.html" method="GET" class="needs-validation" novalidate>
@@ -93,7 +98,7 @@
                 <input class="form-control  mb-2" type="text" name="email" id="inputEmail" placeholder="Username"
                     required>
             </div>
-            <label class="visually-hidden" for="inputNumber">Email Address</label>
+            <label class="visually-hidden" for="inputNumber">Email Addsituations</label>
             <div class="input-group">
                 <span class="input-group-text" id="emailAddon">@</span>
                 <input class="form-control  mb-2" type="email" name="email" id="inputEmail" placeholder="Enter Email"
@@ -102,26 +107,83 @@
             <label class="visually-hidden" for="inputpasswd">Password</label>
             <div class="input-group">
                 <span class="input-group-text" id="passwdAddon"><img src="img/lock.svg"></span>
-                <input class="form-control " type="password" name="passwd" id="inputpasswd" placeholder="********"
-                    minlength="8" maxlength="20" aria-describedby="passwdAddon" required>
+                <input class="form-control " type="password" name="password" id="inputpasswd" placeholder="********"
+                    aria-describedby="passwdAddon" onkeyup="validarsenha()" onchange="confirpwd()" maxlength="20"
+                    required>
             </div>
-            <div class="link">
-                <input class="form-check-input" type="checkbox" name="check" id="check" required>
-                <label class="form-text text muted" for="check">Aceitar<a href="termos de uso.html">Termos</a><a
-                        href="Politicas de privacidade.html"> | Política de Privacidade</a></label>
-                <input class="btn btn-primary w-100" type="submit"></input>
+            <div class="mt-2 ml-2" id="confirpwd"></div>
+            <div class="mt-2" id="errosenha"></div>
+            <input class="mt-2 btn btn-primary w-100" type="submit"></input>
             </div>
         </form>
     </main>
     <footer class="bg-dark">
         <div class="container">
-            <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+            <p class="mt-2  mb-3 text-muted text-center">&copy; 2020-2021</p>
         </div>
     </footer>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/form-validation.js"></script>
-</body>
+    <script>
+        /***************************************************************************
+                                Verified the password status
+        ****************************************************************************/
+        function validarsenha() {
+            var senha = document.getElementById("inputpasswd").value
+            var forca = 0
+            if ((senha.length >= 4) && (senha.length <= 7)) {
+                forca += 10
+            }
+            if ((senha.length >= 7) && (senha.match(/[a-z]+/))) {
+                forca += 25
+            } if ((senha.length >= 6) && (senha.match(/[a-z]+/))) {
+                forca += 10
+            } if ((senha.length >= 7) && (senha.match(/[A-Z]+/))) {
+                forca += 20
+            } if ((senha.length >= 8) && (senha.match(/[~`!@#$%^&*?]/))) {
+                forca += 25
+            }
+            mostraforca(forca)
+        }
 
+        /***************************************************************************
+                                    Evaluation Condition                        
+        ****************************************************************************/
+
+        function mostraforca(forca) {
+           
+            if (forca < 30) {
+                document.getElementById("errosenha").innerHTML = '<div class="progress"><div class="progress-bar bg-danger" role="progressbar" style="width:25%" aria-valuenow="25%" aria-valuemin="0" aria-valuemax="100"></div></div>'
+            } else if ((forca >= 30) && (forca < 50)) {
+                document.getElementById("errosenha").innerHTML = '<div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width:50%" aria-valuenow="50%" aria-valuemin="0" aria-valuemax="100"></div></div>'
+            } else if ((forca >= 50) && (forca < 70)) {
+                document.getElementById("errosenha").innerHTML = '<div class="progress"><div class="progress-bar bg-info" role="progressbar" style="width:75%" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100"></div></div>'
+            } else if ((forca >= 70) && (forca < 100)) {
+                document.getElementById("errosenha").innerHTML = '<div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width:100%" aria-valuenow="100%" aria-valuemin="0" aria-valuemax="100"></div></div>'
+            }
+        }
+        /***************************************************************************
+                Dynamically added password repeat & configuring password show                                   
+        ****************************************************************************/
+        function confirpwd() {
+            var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img        src="img/lock.svg"></span><input class="form-control " type="password" name="password" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><input type="checkbox" id="check" onclick="showpass()"></input><label for="check">Mostrar palavra-passe</label></div>'
+        }
+        function showpass() {
+            var senha = window.document.getElementById('inputpasswd')
+            var repwd = window.document.getElementById('inputpwd')
+            if (senha.type == "password") {
+                senha.type = "text"
+            } else {
+                senha.type = "password"
+            }
+            if (repwd.type == "password") {
+                repwd.type = "text"
+            } else {
+                repwd.type = "password"
+            }
+        }
+    </script>
+</body>
 </html>
