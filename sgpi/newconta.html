@@ -47,13 +47,18 @@
             font-weight: 900;
             font-size: 40px;
         }
+        input[type="text"]:focus
+{
+            border-radius: 10px;
+            border-color: white;
+        }
 
         #navbarCollapse a {
             margin: 12px;
         }
 
         .navbar-toggler {
-            border: none;
+            margin-right: 2%;
         }
 
         .showpass {
@@ -70,7 +75,7 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Verena</a>
+            <a class="navbar-brand p-1" href="#">Verena</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -98,7 +103,7 @@
                 <input class="form-control  mb-2" type="text" name="email" id="inputEmail" placeholder="Username"
                     required>
             </div>
-            <label class="visually-hidden" for="inputNumber">Email Addsituations</label>
+            
             <div class="input-group">
                 <span class="input-group-text" id="emailAddon">@</span>
                 <input class="form-control  mb-2" type="email" name="email" id="inputEmail" placeholder="Enter Email"
@@ -112,6 +117,7 @@
                     maxlength="15" required>
             </div>
             <div class="mt-2 ml-2" id="confirpwd"></div>
+            <small class="form-text text-muted" id="feedback">Crie uma palavra-passe forte, com uma mistura de letras, números e símbolos especias</small>
             <div class="mt-2" id="errosenha"></div>
             <input class="mt-2 btn btn-primary w-100" type="submit"></input>
             </div>
@@ -168,7 +174,8 @@
                 Dynamically added password repeat & configuring password show                                   
         ****************************************************************************/
         function confirpwd() {
-            var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img        src="img/lock.svg"></span><input class="form-control " type="password" name="password" minlength="7" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><div class="form-check "><input class="form-check-input" type="checkbox" id="check" onclick="showpass()"></input><label class="form-check-label" for="check">Mostrar palavra-passe</label></div></div>'
+            var feed = document.getElementById("feedback").innerHTML = ""
+            var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img src="img/lock.svg"></span><input class="form-control " type="password" name="password" minlength="7" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><div class="form-check "><input class="form-check-input" type="checkbox" id="check" onclick="showpass()"></input><label class="form-check-label" for="check">Mostrar palavra-passe</label></div></div>'
         }
         function showpass() {
             var senha = window.document.getElementById('inputpasswd')

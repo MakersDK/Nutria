@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/form-validation.css">
     <title>Ajuda</title>
 
     <style>
+        body{
+            margin-top: 60px;
+        }
+        
         footer {
-            position: relative;
             bottom: 0%;
             width: 100%;
             text-align: center;
@@ -22,7 +25,7 @@
         }
 
         .navbar-toggler {
-            border: none;
+            margin-right: 2%;
         }
 
         .link a {
@@ -34,7 +37,7 @@
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Verena</a>
+            <a class="navbar-brand p-1" href="#">Verena</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +47,6 @@
                         width="25px"></a>
                 <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
                         width="25px"></a>
-                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
                 <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
                         width="25px"></a>
                 <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
@@ -52,16 +54,13 @@
             </div>
         </nav>
     </header>
-    <br>
-    <br>
-    <br>
-    <ul>
+    <div class="p-3">
         <h1>
             Sobre Nós
         </h1>
         <p>
-            O <b>SGPI</b> oferece apoio, controle e gerenciamento de projectos integrados,<br>
-            ainda oferece manuais de diveros cursos e CVs é inteiramente gràtis licenciadas sob a licença <br>
+            O <b>SGPI</b> oferece apoio, controle e gerenciamento de projectos integrados,
+            ainda oferece manuais de diveros cursos e CVs é inteiramente gràtis licenciadas sob a licença 
             Do sistema de projectos integrados (<b>SGPI</b>).
         </p>
         <img src="img/people.svg" alt="FotoEquipe" width="50">
@@ -127,9 +126,9 @@
                         </div>
                         <div class="col-md-6" id="Contact-box">
                             <form action="#" method="POST" class="needs-validation" novalidate>
-                                <input type="email" name="email" id="email" class="form-control"
+                                <input type="email" name="email" id="email" class="form-control mb-2"
                                     placeholder="Enter Email" required>
-                                <input type="text" class="form-control" name="subject" id="subject"
+                                <input type="text" class="form-control mb-2" name="subject" id="subject"
                                     placeholder="Assunto" maxlength="10" required>
                                 <textarea type="text" name="msg" id="msg" class="form-control" cols="30" rows="3"
                                     placeholder="Sua mensagem"></textarea><br>
@@ -140,16 +139,16 @@
                     </div>
                 </div>
             </div>
-    </ul>
-    <footer>
-        <div class="container">
-            <p class=" mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
         </div>
-    </footer>
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/form-validation.js"></script>
+        <footer class="bg-light">
+            <div class="container">
+                <p class=" mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+            </div>
+        </footer>
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/form-validation.js"></script>
 
 
 </body>

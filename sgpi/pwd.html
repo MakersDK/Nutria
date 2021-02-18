@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--<link rel="manifest" href="manifest.json">-->
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -69,8 +69,13 @@
             border-radius: 10px;
             border-color: white;
         }
+
+        #showpass:focus{
+            padding-top: 10px;
+        }
+
         .navbar-toggler {
-            border: none;
+            margin-right: 2%;
         }
     </style>
 
@@ -79,7 +84,7 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Verena</a>
+            <a class="navbar-brand p-1" href="#">Verena</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -89,7 +94,6 @@
                         width="25px"></a>
                 <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
                         width="25px"></a>
-                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
                 <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
                         width="25px"></a>
                 <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
@@ -104,20 +108,20 @@
                 <option id="opt" value="${document.name}">darkenpaulo00@gmail.com</option>
             </select>
         </div><br>
-        <form action="pagelogin.html" method="POST" class="needs-validation" novalidate>
+        <form action="pagelogin.html" method="GET" class="needs-validation" novalidate>
             <div class="input-group form-group">
                 <label class="visually-hidden" for="inputpasswd"></label>
                 <input class="form-control form-control-lg" type="password" name="passwd" id="inputpasswd"
                     placeholder="Introduza a palavra-passe" minlength="8" maxlength="20" autofocus required />
             </div>
+            <div class="form-check fixed" id="showpass">
+                <input class="form-check-input" type="checkbox" id="check">
+                <label for="check">Mostrar palavra passe</label>
+            </div>
+            <div class="btnbuttom">
+                <button class=" btn btn-primary mt-4" type="submit">Seguinte</button>
+            </div>
         </form>
-        <div class="showpass form-check fixed">
-            <input class="form-check-input" type="checkbox" id="check">
-            <label for="check">Mostrar palavra passe</label>
-        </div>
-        <div class="btnbuttom">
-            <button class=" btn btn-primary mt-4" type="submit">Seguinte</button>
-        </div>
         <div class="link mt-4">
             <a href="#"> Esqueceu-se da palavra-passe?</a>
         </div>

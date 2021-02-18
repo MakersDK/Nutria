@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--<link rel="manifest" href="manifest.json">-->
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,7 +44,7 @@
         }
 
         .navbar-toggler {
-            border: none;
+            margin-right: 2%;
         }
     </style>
 
@@ -53,17 +53,16 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Verena</a>
+            <a class="navbar-brand p-1" href="#">Verena</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="text-center collapse navbar-collapse" id="navbarCollapse">
-                <a class="text-light aria-current=" href="conta.html"><img src="img/arrow-left.svg" alt="Voltar"
-                        width="25px"></a>
+                <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg"
+                        alt="Voltar" width="25px"></a>
                 <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
                         width="25px"></a>
-                <a class="text-light" href="confirm.html"><img src="img/form.svg" alt="Form" width="25px"></a>
                 <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
                         width="25px"></a>
                 <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
@@ -77,8 +76,8 @@
             <h1 class="display-4 fw-normal">Faça Upload</h1>
             <p class="lead fw-normal">Garanta uma boa vistoria e analise dos seus projectos, Partilhe seus projectos com
                 o formador responsável por analisar o projeto. e garanta a classificação do mesmo</p>
-            <form action="#" method="POST">
-                <input class="btn btn-primary " type="submit" value="Pedir Acopanhamento"></input>
+            <form action="#" method="GET">
+                <input class="btn btn-primary " onclick="checkd()" type="submit" value="Pedir Acopanhamento"></input>
                 <input type="file" name="upload" id="files" accept="image/*">
             </form>
         </div>
@@ -105,6 +104,10 @@
             }
             reader.readAsDataURL(file.files[0])
         })
+        function checkd(){
+            img.src = "/img/cloud-check.svg"
+        }
+        
     </script>
 </body>
 
