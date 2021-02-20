@@ -10,10 +10,10 @@
     <title>Ajuda</title>
 
     <style>
-        body{
+        body {
             margin-top: 60px;
         }
-        
+
         footer {
             bottom: 0%;
             width: 100%;
@@ -60,7 +60,7 @@
         </h1>
         <p>
             O <b>SGPI</b> oferece apoio, controle e gerenciamento de projectos integrados,
-            ainda oferece manuais de diveros cursos e CVs é inteiramente gràtis licenciadas sob a licença 
+            ainda oferece manuais de diveros cursos e CVs é inteiramente gràtis licenciadas sob a licença
             Do sistema de projectos integrados (<b>SGPI</b>).
         </p>
         <img src="img/people.svg" alt="FotoEquipe" width="50">
@@ -124,6 +124,7 @@
                                 <b>Ou deixe-nos uma mensagem:</b>
                             </p>
                         </div>
+                        <span id="camperrno"></span>
                         <div class="col-md-6" id="Contact-box">
                             <form action="#" method="POST" class="needs-validation" novalidate>
                                 <input type="email" name="email" id="email" class="form-control mb-2"
@@ -132,7 +133,7 @@
                                     placeholder="Assunto" maxlength="10" required>
                                 <textarea type="text" name="msg" id="msg" class="form-control" cols="30" rows="3"
                                     placeholder="Sua mensagem"></textarea><br>
-                                <input type="submit" class="btn btn-primary w-100" value="Enviar">
+                                <input type="submit" class="btn btn-primary w-100" value="Enviar" onclick="valid()">
                                 <!--hoje esta tudo bem,  futuramente muito dinheiro na conta, carros, empresas, e mansões em posse -->
                             </form>
                         </div>
@@ -149,6 +150,14 @@
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/form-validation.js"></script>
+        <script>
+            function valid() {
+                if ($('#camperrno').val() == 0) {
+                    document.getElementById('camperrno').innerHTML = '<div class="alert alert-danger">Preencha o campo assunto</div>'
+                }else{}
+            }
+
+        </script>
 
 
 </body>

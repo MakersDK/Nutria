@@ -68,6 +68,11 @@
         #check {
             margin-right: 10px;
         }
+        #alert {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     </style>
 
 </head>
@@ -94,7 +99,7 @@
         </nav>
     </header>
     <main class="form-signup">
-        <form action="pagelogin.html" method="GET" class="needs-validation" novalidate>
+        <form action="pagelogin.html" method="GET" name="formuser" class="needs-validation" novalidate>
             <h1 class=" title text-center mb-3">
                 Sign up
             </h1>
@@ -119,9 +124,9 @@
             <div class="mt-2 ml-2" id="confirpwd"></div>
             <small class="form-text text-muted" id="feedback">Crie uma palavra-passe forte, com uma mistura de letras, números e símbolos especias</small>
             <div class="mt-2" id="errosenha"></div>
-            <input class="mt-2 btn btn-primary w-100" type="submit"></input>
+            <input class="mt-2 btn btn-primary w-100" type="submit" onclick="comprep()"></input>
             </div>
-        </form>
+        </form>  
     </main>
     <footer class="bg-dark">
         <div class="container">
@@ -148,7 +153,7 @@
                 forca += 10
             } if ((senha.length >= 7) && (senha.match(/[A-Z]+/))) {
                 forca += 20
-            } if ((senha.length >= 8) && (senha.match(/[~`!@#$%^&*?]/)) && (senha.match(/[1234567890]/))) {
+            } if ((senha.length >= 8) && (senha.match(/[~`!@#$%^&*?]/)) && (senha.match(/[0-9]/))) {
                 forca += 25
             }
             mostraforca(forca)
@@ -175,7 +180,7 @@
         ****************************************************************************/
         function confirpwd() {
             var feed = document.getElementById("feedback").innerHTML = ""
-            var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img src="img/lock.svg"></span><input class="form-control " type="password" name="password" minlength="7" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><div class="form-check "><input class="form-check-input" type="checkbox" id="check" onclick="showpass()"></input><label class="form-check-label" for="check">Mostrar palavra-passe</label></div></div>'
+            var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img src="img/lock.svg"></span><input class="form-control " type="password" name="reppassword" minlength="7" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><div class="form-check "><input class="form-check-input" type="checkbox" id="check" onclick="showpass()"></input><label class="form-check-label" for="check">Mostrar palavra-passe</label></div></div>'
         }
         function showpass() {
             var senha = window.document.getElementById('inputpasswd')
@@ -191,6 +196,18 @@
                 repwd.type = "password"
             }
         }
+        function comprep() {
+             var senha = document.getElementById("inputpasswd").value
+             var repsenha = document.getElementById("inputpwd").value
+  
+             if (senha === repsenha){
+                document.getElementById("feedback").innerHTML='<div class="alert alert-success" id="alert">Senhas Compativeis</div>'
+                
+             }else{
+                document.getElementById("feedback").innerHTML='<div class="alert alert-danger" id="alert">Senhas Incompativeis</div>'
+             }
+        }
+         
     </script>
 </body>
 

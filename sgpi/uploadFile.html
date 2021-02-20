@@ -46,6 +46,21 @@
         .navbar-toggler {
             margin-right: 2%;
         }
+
+        #barralert {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            margin-top: 55px;
+            padding: 10px;
+            transition: all 3s ease;
+        }
+
+        #alert {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     </style>
 
 </head>
@@ -69,18 +84,22 @@
                         width="25px"></a>
             </div>
         </nav>
+        <div id="barralert"></div>
     </header>
-    <div id="uploaded" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
+
+    <div id="uploaded" class="position-relative text-center bg-light">
+        <div class="col-md-5 mx-auto">
             <img src="img/cloud-upload.svg" alt="Fazer upload" id="image">
             <h1 class="display-4 fw-normal">Faça Upload</h1>
             <p class="lead fw-normal">Garanta uma boa vistoria e analise dos seus projectos, Partilhe seus projectos com
                 o formador responsável por analisar o projeto. e garanta a classificação do mesmo</p>
             <form action="#" method="GET">
-                <input class="btn btn-primary " onclick="checkd()" type="submit" value="Pedir Acopanhamento"></input>
-                <input type="file" name="upload" id="files" accept="image/*">
+                <input type="file" name="upload" id="files" accept=".zip,.docx,.odt,.pdf">
+                <input type="submit" class="btn btn-primary" onclick="alerta()" value="Pedir Acompanhamento"></input>
             </form>
+ 
         </div>
+
     </div>
     <footer class="bg-dark">
         <div class="container">
@@ -91,23 +110,28 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-        let img = window.document.getElementById("image")
-        let file = window.document.getElementById("files")
+        var img = window.document.getElementById("image")
+        var file = window.document.getElementById("files")
 
         img.addEventListener('click', () => {
             file.click();
         })
         file.addEventListener('change', (event) => {
             let reader = new FileReader()
-            reader.onload = () => {
+            
+            reader.onloadend = () => {
                 img.src = reader.result
             }
             reader.readAsDataURL(file.files[0])
+            
         })
-        function checkd(){
-            img.src = "/img/cloud-check.svg"
+        function alerta() {
+            setTimeout(function alertaa() {
+                document.getElementById("barralert").innerHTML = '<div class="alert alert-success" id="alert">SUCCESSFULLY UPLOADED!!!</div>'
+            }, 1000)
         }
-        
+
+
     </script>
 </body>
 
