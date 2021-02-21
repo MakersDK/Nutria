@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<link rel="manifest" href="manifest.json">-->
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Upload</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin-top: 80px;
+            position: fixed;
+            width: 100%;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+            text-align: center;
+        }
+
+        #navbarCollapse a {
+            margin: 12px;
+        }
+
+
+        .navbar-toggler {
+            margin-right: 2%;
+        }
+
+        .container {
+            text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand p-1" href="#">Verena</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="text-center collapse navbar-collapse" id="navbarCollapse">
+                <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg"
+                        alt="Voltar" width="25px"></a>
+                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="student"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
+                        width="25px"></a>
+                <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
+                        width="25px"></a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container " id="containerSite">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button"
+                    role="tab" aria-controls="student" aria-selected="true">student</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher" type="button"
+                    role="tab" aria-controls="teacher" aria-selected="false">teacher</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="employee-tab" data-bs-toggle="tab" data-bs-target="#employee" type="button"
+                    role="tab" aria-controls="employee" aria-selected="false">employee</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">...</div>
+            <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">...</div>
+            <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab">...</div>
+        </div>
+
+        <!--Div Modal for Student-->
+        <div class="modal fade " id="ModalStudent" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="pagelogin.html" method="GET">
+                            <div class="form-group row mb-2">
+                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input type="email" class="form-control" id="email1" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-2 col-form-label">Senha</label>
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="password1" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="p-2 form-group row">
+                                <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
+                                    value="Entrar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Div Modal for teacher -->
+        <div class="modal fade " id="ModalTeacher" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="pagelogin.html" method="GET">
+                            <div class="form-group row mb-2">
+                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input type="email" class="form-control" id="email2" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-2 col-form-label">Senha</label>
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="password2" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="p-2 form-group row">
+                                <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
+                                    value="Entrar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Div Modal for employee-->
+        <div class="modal fade " id="ModalEmployee" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="pagelogin.html" method="GET">
+                            <div class="form-group row mb-2">
+                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input type="email" class="form-control" id="email3" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-2 col-form-label">Senha</label>
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="password3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="p-2 form-group row">
+                                <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
+                                    value="Entrar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark">
+        <div class="container">
+            <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+<!--
+   
+-->

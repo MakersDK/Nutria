@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -12,6 +13,13 @@
     <style>
         body {
             margin-top: 60px;
+
+        }
+
+        .scrollspySite {
+            position: relative;
+            overflow: auto;
+            height: 400px;
         }
 
         footer {
@@ -28,8 +36,21 @@
             margin-right: 2%;
         }
 
-        .link a {
-            text-decoration: none;
+
+        #desappear {
+            display: none;
+        }
+
+        #modalerrno {
+            padding: 10px;
+        }
+
+        #link a {
+            cursor: pointer;
+        }
+
+        img#help {
+            cursor: help;
         }
     </style>
 </head>
@@ -49,7 +70,7 @@
                         width="25px"></a>
                 <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
                         width="25px"></a>
-                <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre"
+                <a class="text-light aria-current=" href="sobre.html"><img id="help" src="img/help.svg" alt="sobre"
                         width="25px"></a>
             </div>
         </nav>
@@ -89,77 +110,455 @@
             Faça uma análise do sistema enquanto Utiliza os recursos fornecidos pelo sgpi <br>
             e reporte os erros encontrados no sistema. <br> A equipe irá verificar.
         </p>
-        <h2>
+        <h4>
             Termos & Políticas de Privacidade
-        </h2>
+        </h4>
         <p>
             <hr>
-        <div class="link">
-            <a href="termos de uso.html">Termos</a><a href="Politicas de privacidade.html"> | Política de
-                Privacidade</a>
-            <hr>
-            </p>
-            <div id="contact_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="main-title text-center">Entre em contacto conosco</h2>
-                        </div>
-                        <div class="col-md-4 contact-box">
-                            <i><img src="img/telephone-fill.svg" alt="FotoCel"></i>
-                            <p><span class="contact-tile">Ligue para:</span>(+258) 84-7321-526</p>
-                            <p><span class="contact-tile">Horários: </span>08:00 - 15:30</p>
-                        </div>
-                        <div class="col-md-4 contact-box">
-                            <i><img src="img/envelope-fill.svg" alt="FotoEnvelope"></i>
-                            <p><span class="contact-tile">Envie um Email:</span>contacto@vwagency.com.pt</p>
-                        </div>
-                        <div class="col-md-4 contact-box">
-                            <i><img src="img/geo-alt-fill.svg" alt="FotoGeoLocation"></i>
-                            <p><span class="contact-tile">Venhe tomar um café </span>Rua GTI - 4569</p>
-                        </div>
-                        <div class="col-md-6" id="msg-box">
-                            <br>
-                            <p>
-                                <b>Ou deixe-nos uma mensagem:</b>
-                            </p>
-                        </div>
-                        <span id="camperrno"></span>
-                        <div class="col-md-6" id="Contact-box">
-                            <form action="#" method="POST" class="needs-validation" novalidate>
-                                <input type="email" name="email" id="email" class="form-control mb-2"
-                                    placeholder="Enter Email" required>
-                                <input type="text" class="form-control mb-2" name="subject" id="subject"
-                                    placeholder="Assunto" maxlength="10" required>
-                                <textarea type="text" name="msg" id="msg" class="form-control" cols="30" rows="3"
-                                    placeholder="Sua mensagem"></textarea><br>
-                                <input type="submit" class="btn btn-primary w-100" value="Enviar" onclick="valid()">
-                                <!--hoje esta tudo bem,  futuramente muito dinheiro na conta, carros, empresas, e mansões em posse -->
-                            </form>
+        <div id="link">
+            <a data-bs-toggle="modal" data-bs-target="#ModalTermos">Termos</a>
+            |
+            <a data-bs-toggle="modal" data-bs-target="#ModalPrivate">Politicas de Privacidade</a>
+        </div>
+        <hr>
+        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="main-title text-center">Entre em contacto conosco</h2>
+                </div>
+                <div class="col-md-4 contact-box">
+                    <i><img src="img/telephone-fill.svg" alt="FotoCel"></i>
+                    <p><span class="contact-tile">Ligue para:</span>(+258) 84-7321-526</p>
+                    <p><span class="contact-tile">Horários: </span>08:00 - 15:30</p>
+                </div>
+                <div class="col-md-4 contact-box">
+                    <i><img src="img/envelope-fill.svg" alt="FotoEnvelope"></i>
+                    <p><span class="contact-tile">Envie um Email:</span>contacto@vwagency.com.pt</p>
+                </div>
+                <div class="col-md-4 contact-box">
+                    <i><img src="img/geo-alt-fill.svg" alt="FotoGeoLocation"></i>
+                    <p><span class="contact-tile">Venhe tomar um café </span>Rua GTI - 4569</p>
+                </div>
+                <div class="col-md-6" id="msg-box">
+                    <br>
+                    <p>
+                        <b>Ou deixe-nos uma mensagem:</b>
+                    </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#ModalStart">Envie-nos uma
+                        mensagem</button>
+                    <div class="container">
+                        <div class="modal fade" id="ModalStart" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Envie-nos uma mensagem</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="modalerrno"></div>
+                                        <div class="col-md-6" id="Contact-box">
+                                            <form action="pagenumber.html" method="GET">
+                                                <input type="email" name="email" id="email" class="form-control mb-2"
+                                                    placeholder="Enter Email" required>
+                                                <input type="text" class="form-control mb-2" name="subject" id="subject"
+                                                    placeholder="Assunto" maxlength="10" required>
+                                                <textarea type="text" name="msg" id="msg" class="form-control" cols="30"
+                                                    rows="3" placeholder="Sua mensagem" required></textarea>
+                                                <input type="submit" id="desappear" class="btn btn-primary"
+                                                    value="Send">
+                                                <!--hoje esta tudo bem,  futuramente muito dinheiro na conta, carros, empresas, e mansões em posse -->
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            id="cancelar">Cancelar</button>
+                                        <button type="button" class="btn btn-primary" onclick="campvalid()"
+                                            id="send">Send message</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="bg-light">
-            <div class="container">
-                <p class=" mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
+
+        <!--Termos-->
+        <div class="modal fade" id="ModalTermos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Termos de Uso</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <nav id="navbarVertical" class="navbar navbar-light bg-light">
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link" href="#item1">Termos</a>
+                                        <a class="nav-link" href="#item2">Uso de Licença</a>
+                                        <a class="nav-link" href="#item3">Isenção de responsa-<br>bilidade</a>
+                                        <a class="nav-link" href="#item4">Limitações</a>
+                                        <a class="nav-link" href="#item5">Precisão de materiais</a>
+                                        <a class="nav-link" href="#item6">Links</a>
+                                        <a class="nav-link" href="#item7">Modificações</a>
+                                        <a class="nav-link" href="#item8">Lei aplicável</a>
+                                    </nav>
+                                </nav>
+                            </div>
+                            <div class="col-7">
+                                <div data-spy="scroll" data-target="#navbarVertical" data-offset="0"
+                                    class="scrollspySite ">
+                                    <h4 id="item1">Termos</h4>
+                                    <p>Ao acessar ao site <a
+                                            href='http://sistema de gestão de projetos integrados'>sistema de gestao de
+                                            projetos integrados</a>, concorda em cumprir estes termos de serviço, todas
+                                        as leis e
+                                        regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas
+                                        as leis locais
+                                        aplicáveis. Se você não concordar com algum desses termos, está proibido de usar
+                                        ou acessar este
+                                        site. Os materiais contidos neste site são protegidos pelas leis de direitos
+                                        autorais e marcas
+                                        comerciais aplicáveis.</p>
+                                    <h4 id="item2">Uso de Licença</h4>
+                                    <p>É concedida permissão para baixar temporariamente uma cópia dos materiais
+                                        (informações ou software)
+                                        no site sistema de gestao de projetos integrados , apenas para visualização
+                                        transitória pessoal e
+                                        não comercial. Esta é a concessão de uma licença, não uma transferência de
+                                        título e, sob esta
+                                        licença, você não pode: </p>
+                                    <ol>
+                                        <li>modificar ou copiar os materiais; </li>
+                                        <li>usar os materiais para qualquer finalidade comercial ou para exibição
+                                            pública (comercial ou não
+                                            comercial); </li>
+                                        <li>tentar descompilar ou fazer engenharia reversa de qualquer software contido
+                                            no site sistema de
+                                            gestao de projetos integrados; </li>
+                                        <li>remover quaisquer direitos autorais ou outras notações de propriedade dos
+                                            materiais; ou </li>
+                                        <li>transferir os materiais para outra pessoa ou 'espelhe' os materiais em
+                                            qualquer outro servidor.
+                                        </li>
+                                    </ol>
+                                    <p>Esta licença será automaticamente rescindida se você violar alguma dessas
+                                        restrições e poderá ser
+                                        rescindida por sistema de gestao de projetos integrados a qualquer momento. Ao
+                                        encerrar a
+                                        visualização desses materiais ou após o término desta licença, você deve apagar
+                                        todos os materiais
+                                        baixados em sua posse, seja em formato eletrónico ou impresso.
+                                    <h4 id="item3">Isenção de responsabilidade</h4>
+                                    <ol>
+                                        <li>Os materiais no site da sistema de gestao de projetos integrados são
+                                            fornecidos 'como estão'.
+                                            sistema de gestao de projetos integrados não oferece garantias, expressas ou
+                                            implícitas, e, por
+                                            este meio, isenta e nega todas as outras garantias, incluindo, sem
+                                            limitação, garantias
+                                            implícitas ou condições de comercialização, adequação a um fim específico ou
+                                            não violação de
+                                            propriedade intelectual ou outra violação de direitos. </li>
+                                        <li>Além disso, o sistema de gestao de projetos integrados não garante ou faz
+                                            qualquer representação
+                                            relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso
+                                            dos materiais em seu
+                                            site ou de outra forma relacionado a esses materiais ou em sites vinculados
+                                            a este site.</li>
+                                    </ol>
+                                    <h4 id="item4">Limitações</h4>
+                                    <p>Em nenhum caso o sistema de gestão de projetos integrados ou seus fornecedores
+                                        serão responsáveis
+                                        ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou
+                                        lucro ou devido a
+                                        interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os
+                                        materiais em sistema de
+                                        gestao de projetos integrados, mesmo que sistema de gestao de projetos
+                                        integrados ou um
+                                        representante autorizado da sistema de gestao de projetos integrados tenha sido
+                                        notificado oralmente
+                                        ou por escrito da possibilidade de tais danos. Como algumas jurisdições não
+                                        permitem limitações em
+                                        garantias implícitas, ou limitações de responsabilidade por danos conseqüentes
+                                        ou incidentais, essas
+                                        limitações podem não se aplicar a você.</p>
+                                    <h4 id="item5">Precisão de materiais</h4>
+                                    <p>Os materiais exibidos no site da sistema de gestao de projetos integrados podem
+                                        incluir erros
+                                        técnicos, tipográficos ou fotográficos. sistema de gestao de projetos integrados
+                                        não garante que
+                                        qualquer material em seu site seja preciso, completo ou atual. sistema de gestao
+                                        de projetos
+                                        integrados pode fazer alterações nos materiais contidos em seu site a qualquer
+                                        momento, sem aviso
+                                        prévio. No entanto, sistema de gestao de projetos integrados não se compromete a
+                                        atualizar os
+                                        materiais.</p>
+                                    <h4 id="item6">Links</h4>
+                                    <p>O sistema de gestao de projetos integrados não analisou todos os sites vinculados
+                                        ao seu site e não é
+                                        responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link
+                                        não implica endosso
+                                        por sistema de gestao de projetos integrados do site. O uso de qualquer site
+                                        vinculado é por conta e
+                                        risco do usuário.</p>
+                                    </p>
+                                    <h4 id="item7">Modificações</h4>
+                                    <p>O sistema de gestao de projetos integrados pode revisar estes termos de serviço
+                                        do site a qualquer
+                                        momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à
+                                        versão atual desses
+                                        termos de serviço.</p>
+                                    <h4 id="item8">Lei aplicável</h4>
+                                    <p>Estes termos e condições são regidos e interpretados de acordo com as leis do
+                                        sistema de gestao de
+                                        projetos integrados e você se submete irrevogavelmente à jurisdição exclusiva
+                                        dos tribunais naquele
+                                        estado ou localidade.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------------------------------->
+
+        <!--Politicas de Privacidade-->
+        <div class="modal fade" id="ModalPrivate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Politicas de Privacidade</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <nav id="navbarVertical" class="navbar navbar-light bg-light">
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link" href="#item1">Política Privacidade</a>
+                                        <a class="nav-link" href="#item2">O que são cookies?</a>
+                                        <a class="nav-link" href="#item3">Como usamos os cookies?</a>
+                                        <a class="nav-link" href="#item4">Desativar cookies</a>
+                                        <a class="nav-link" href="#item5">Cookies que definimos</a>
+                                        <a class="nav-link" href="#item6">Cookies de Terceiros</a>
+                                        <a class="nav-link" href="#item7">Compromisso do usuário</a>
+                                        <a class="nav-link" href="#item8">Mais informações</a>
+                                    </nav>
+                                </nav>
+                            </div>
+                            <div class="col-7">
+                                <div data-spy="scroll" data-target="#navbarVertical" data-offset="0"
+                                    class="scrollspySite ">
+                                    <h4 id="item1">Política Privacidade</h4>
+                <p>
+                    A sua privacidade é importante para nós. É política do sistema de gestao de projetos integrados
+                    respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a
+                        href=http://sistema de gestao de projetos integrados>sistema de gestao de projetos
+                        integrados</a>, e outros sites que possuímos e operamos.</p>
+                <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um
+                    serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também
+                    informamos por que estamos coletando e como será usado. </p>
+                <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado.
+                    Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas
+                    e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+                <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando
+                    exigido por lei.</p>
+                <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que
+                    não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade
+                    por suas respectivas <a href='https://politicaprivacidade.com' target='_BLANK'>políticas de
+                        privacidade</a>. </p>
+                <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não
+                    possamos fornecer alguns dos serviços desejados.</p>
+                <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de
+                    privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do
+                    usuário e informações pessoais, entre em contacto connosco.
+                </p>
+                <h4 id="item2">Política de Cookies sistema de gestao de projetos integrados</h4>
+                <h3>O que são cookies?</h3>
+                <p>
+                    Como é prática comum em quase todos os sites profissionais, este site usa cookies, que são pequenos
+                    arquivos baixados no seu computador, para melhorar sua experiência. Esta página descreve quais
+                    informações eles coletam, como as usamos e por que às vezes precisamos armazenar esses cookies.
+                    Também compartilharemos como você pode impedir que esses cookies sejam armazenados, no entanto, isso
+                    pode fazer o downgrade ou 'quebrar' certos elementos da funcionalidade do site.
+                </p>
+                <h4 id="item3">Como usamos os cookies?</h4>
+                <p>
+                    Utilizamos cookies por vários motivos, detalhados abaixo. Infelizmente, na maioria dos casos, não
+                    existem opções padrão do setor para desativar os cookies sem desativar completamente a
+                    funcionalidade e os recursos que eles adicionam a este site. É recomendável que você deixe todos os
+                    cookies se não tiver certeza se precisa ou não deles, caso sejam usados ​​para fornecer um serviço
+                    que você usa.
+                </p>
+                <h4 id="item4">Desativar cookies</h4>
+                <p>
+                    Você pode impedir a configuração de cookies ajustando as configurações do seu navegador (consulte a
+                    Ajuda do navegador para saber como fazer isso). Esteja ciente de que a desativação de cookies
+                    afetará a funcionalidade deste e de muitos outros sites que você visita. A desativação de cookies
+                    geralmente resultará na desativação de determinadas funcionalidades e recursos deste site. Portanto,
+                    é recomendável que você não desative os cookies.
+                </p>
+                <h4 id="item5">Cookies que definimos</h4>
+                <p>
+                <ul>
+                    <li> Cookies relacionados à conta<br><br> Se você criar uma conta connosco, usaremos cookies
+                        para o gerenciamento do processo de inscrição e administração geral. Esses cookies
+                        geralmente serão excluídos quando você sair do sistema, porém, em alguns casos, eles poderão
+                        permanecer posteriormente para lembrar as preferências do seu site ao sair.<br><br> </li>
+                    <li> Cookies relacionados ao login<br><br> Utilizamos cookies quando você está logado, para que
+                        possamos lembrar dessa ação. Isso evita que você precise fazer login sempre que visitar uma
+                        nova página. Esses cookies são normalmente removidos ou limpos quando você efetua logout
+                        para garantir que você possa acessar apenas a recursos e áreas restritas ao efetuar
+                        login.<br><br> </li>
+                    <li> Cookies relacionados a boletins por e-mail<br><br> Este site oferece serviços de assinatura
+                        de boletim informativo ou e-mail e os cookies podem ser usados ​​para lembrar se você já
+                        está registrado e se deve mostrar determinadas notificações válidas apenas para usuários
+                        inscritos / não inscritos.<br><br> </li>
+                    <li> Pedidos processando cookies relacionados<br><br> Este site oferece facilidades de comércio
+                        eletrônico ou pagamento e alguns cookies são essenciais para garantir que seu pedido seja
+                        lembrado entre as páginas, para que possamos processá-lo adequadamente.<br><br> </li>
+                    <li> Cookies relacionados a pesquisas<br><br> Periodicamente, oferecemos pesquisas e
+                        questionários para fornecer informações interessantes, ferramentas úteis ou para entender
+                        nossa base de usuários com mais precisão. Essas pesquisas podem usar cookies para lembrar
+                        quem já participou numa pesquisa ou para fornecer resultados precisos após a alteração das
+                        páginas.<br><br> </li>
+                    <li> Cookies relacionados a formulários<br><br> Quando você envia dados por meio de um
+                        formulário como os encontrados nas páginas de contacto ou nos formulários de comentários, os
+                        cookies podem ser configurados para lembrar os detalhes do usuário para correspondência
+                        futura.<br><br> </li>
+                    <li> Cookies de preferências do site<br><br> Para proporcionar uma ótima experiência neste site,
+                        fornecemos a funcionalidade para definir suas preferências de como esse site é executado
+                        quando você o usa. Para lembrar suas preferências, precisamos definir cookies para que essas
+                        informações possam ser chamadas sempre que você interagir com uma página for afetada por
+                        suas preferências.<br> </li>
+                </ul>
+                </p>
+                <h4 id="item6">Cookies de Terceiros</h4>
+                <p>
+                    Em alguns casos especiais, também usamos cookies fornecidos por terceiros confiáveis. A seção a
+                    seguir detalha quais cookies de terceiros você pode encontrar através deste site.
+                </p>
+                <ul>
+                    <li> Este site usa o Google Analytics, que é uma das soluções de análise mais difundidas e
+                        confiáveis ​​da Web, para nos ajudar a entender como você usa o site e como podemos melhorar sua
+                        experiência. Esses cookies podem rastrear itens como quanto tempo você gasta no site e as
+                        páginas visitadas, para que possamos continuar produzindo conteúdo atraente. </li>
+                </ul>
+                <p>Para mais informações sobre cookies do Google Analytics, consulte a página oficial do Google
+                    Analytics.</p>
+                <ul>
+                    <li> As análises de terceiros são usadas para rastrear e medir o uso deste site, para que possamos
+                        continuar produzindo conteúdo atrativo. Esses cookies podem rastrear itens como o tempo que você
+                        passa no site ou as páginas visitadas, o que nos ajuda a entender como podemos melhorar o site
+                        para você.</li>
+                    <li> Periodicamente, testamos novos recursos e fazemos alterações subtis na maneira como o site se
+                        apresenta. Quando ainda estamos testando novos recursos, esses cookies podem ser usados ​​para
+                        garantir que você receba uma experiência consistente enquanto estiver no site, enquanto
+                        entendemos quais otimizações os nossos usuários mais apreciam.</li>
+                    <li> À medida que vendemos produtos, é importante entendermos as estatísticas sobre quantos
+                        visitantes de nosso site realmente compram e, portanto, esse é o tipo de dados que esses cookies
+                        rastrearão. Isso é importante para você, pois significa que podemos fazer previsões de negócios
+                        com precisão que nos permitem analizar nossos custos de publicidade e produtos para garantir o
+                        melhor preço possível.</li>
+                    <li> O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para
+                        veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado
+                        anúncio é exibido para você.<br> Para mais informações sobre o Google AdSense, consulte as FAQs
+                        oficiais sobre privacidade do Google AdSense. </li>
+                    <li> Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer
+                        financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados
+                        ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes
+                        sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes
+                        que possam ser do seu interesse.</li>
+                    <li>Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente
+                        nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos
+                        parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos
+                        parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra. </li>
+                </ul>
+                <h4 id="item7">Compromisso do usuário</h4>
+                <p>
+                <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o sistema de
+                    gestao de projetos integrados oferece no site e com caráter enunciativo, mas não limitativo:</p>
+                <ul>
+                    <li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;
+                    </li>
+                    <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, ou sobre cassinos,
+                        <a href='https://ondeapostar.pt/'
+                            style='color: inherit;font-weight: normal;text-decoration:none;'>casas de apostas</a>
+                        (ex.: <a href='https://ondeapostar.pt/review/betano/'
+                            style='color: inherit;font-weight: normal;text-decoration:none;'>Betano</a>), jogos de
+                        sorte e azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os
+                        direitos humanos;</li>
+                    <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do sistema de
+                        gestao de projetos integrados, de seus fornecedores ou terceiros, para introduzir ou
+                        disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam
+                        capazes de causar danos anteriormente mencionados.</li>
+                </ul>
+                </p>
+                <h4 id="item8">Mais informações</h4>
+                <p>
+                    Esperemos que esteja esclarecido e, como mencionado anteriorimente, se houver algo que você não tem
+                    certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um
+                    dos recursos que você usa em nosso site.</p>
+                <p>Esta política é efetiva a partir de <strong>January</strong>/<strong>2021</strong>.
+                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-------------------------------------------------------------------------------------------------------------------------------------->
         <script src="js/jquery-3.5.1.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/form-validation.js"></script>
         <script>
-            function valid() {
-                if ($('#camperrno').val() == 0) {
-                    document.getElementById('camperrno').innerHTML = '<div class="alert alert-danger">Preencha o campo assunto</div>'
-                }else{}
+            send.addEventListener('click', () => {
+                const botao = document.getElementById("desappear")
+                const send = document.getElementById("send")
+                botao.click()
+            })
+
+            function campvalid() {
+                const email = document.getElementById("email")
+                const subject = document.getElementById("subject")
+                const msg = document.getElementById("msg")
+                if (email.value.length == 0) {
+                    document.getElementById("modalerrno").innerHTML = '<span class="alert alert-danger" id="modalerrno">Preencha o campo Email</span>'
+                }
+                else if (subject.value.length == 0) {
+                    document.getElementById("modalerrno").innerHTML = '<span class="alert alert-danger" id="modalerrno">Preencha o campo Assunto</span>'
+                }
+                else if (msg.value.length == 0) {
+                    document.getElementById("modalerrno").innerHTML = '<span class="alert alert-danger" id="modalerrno">Preencha o campo Mensagem</span>'
+                }
+                else if ((email.value.length == 0) && (subject.value.length == 0) && (msg.value.length == 0)) {
+                    document.getElementById("modalerrno").innerHTML = '<span class="alert alert-danger" id="modalerrno">Preencha os campos por favor</span>'
+                } else {
+                    document.getElementById("modalerrno").innerHTML = ''
+                }
             }
+            cancelar.addEventListener('click', () => {
+                const cancelar = document.getElementById("cancelar")
+                document.getElementById("modalerrno").innerHTML = ''
+                this.email.value = ''
+                this.subject.value = ''
+                this.msg.value = ''
+            })
 
         </script>
-
-
 </body>
 
 </html>

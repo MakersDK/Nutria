@@ -3,36 +3,45 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--<link rel="manifest" href="manifest.json">-->
   <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <title>Login</title>
+  <title>Upload</title>
 
   <style>
-    .scrollspySite {
-      position: relative;
-      overflow: auto;
-      height: 185px;
+    html,
+    body {
+      height: 100%;
     }
 
+
+
     footer {
-      width: 100%;
       position: fixed;
       bottom: 0%;
+      width: 100%;
+      text-align: center;
     }
 
     #navbarCollapse a {
       margin: 12px;
     }
 
+
     .navbar-toggler {
       margin-right: 2%;
     }
+
+    .container {
+      text-align: center;
+    }
   </style>
+
 </head>
 
-<body>
+<body class="bg-light">
   <header>
     <nav class="navbar navbar-dark bg-dark fixed-top">
       <a class="navbar-brand p-1" href="#">Verena</a>
@@ -41,208 +50,203 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="text-center collapse navbar-collapse" id="navbarCollapse">
-        <a class="text-light aria-current=" href="index.html"><img src="img/arrow-left.svg" alt="Voltar"
+        <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg" alt="Voltar"
             width="25px"></a>
         <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home" width="25px"></a>
-        <a class="text-light aria-current=" href="studentAccount.html"><img src="img/cloud.svg" alt="stac"
-            width="25px"></a>
+        <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login" width="25px"></a>
         <a class="text-light aria-current=" href="sobre.html"><img src="img/help.svg" alt="sobre" width="25px"></a>
       </div>
     </nav>
   </header>
+
   <div class="jumbotron fixed">
-    <div class="col-lg-12">
-      <div class="container">
-        <form class="input-group py-4 pb-0 p-2" id="formulario" action="">
-          <input class="pesquisa my-5 form-control" type="search" placeholder="Buscar...">
-          <span class="input-group-btn">
-            <button class="mt-5 btn btn-success">search</button>
-          </span>
-        </form>
-      </div>
+    <div class="container">
+      <form class="input-group py-4 pb-0" id="formulario" action="">
+        <input class="pesquisa my-5 form-control" type="search" placeholder="Buscar...">
+        <span class="input-group-btn">
+          <button class="mt-5 btn btn-success">search</button>
+        </span>
+      </form>
     </div>
   </div>
 
-  <ul class="lista">
-    <div class="album bg-light">
-      <div class="container">
+  <div class="album bg-light">
+    <div class="container">
 
-        <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/upefa.png" alt="UTILIZAR PROGRAMAS DE ESCRITÓRIO DE FORMA AVANÇADA" width="100%"
-                  height="245"></a>
-              <div class="card-body">
-                <p nome="Utilizar programas de escritório de forma avançada" class="card-text">Utilizar programas de
-                  escritório de forma avançada</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.01-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+      <div class="row p-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/upefa.png" alt="UTILIZAR PROGRAMAS DE ESCRITÓRIO DE FORMA AVANÇADA" width="100%"
+                height="245"></a>
+            <div class="card-body">
+              <p nome="Utilizar programas de escritório de forma avançada" class="card-text">Utilizar programas de
+                escritório de forma avançada</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.01-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cicc.png" alt="conhecer e identificar os componentes de um computador" width="100%"
-                  height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Conhecer e identificar os componentes de um computador</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.02-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cicc.png" alt="conhecer e identificar os componentes de um computador" width="100%"
+                height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Conhecer e identificar os componentes de um computador</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.02-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/mch.png" alt="manutenção de computadores e hardware" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Manutenção de computadores e hardware</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.03-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/mch.png" alt="manutenção de computadores e hardware" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Manutenção de computadores e hardware</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.03-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/icso.png" alt="instalar e configurar sisetemas operativos" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Instalar e configurar sisetemas operativos</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.04-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/icso.png" alt="instalar e configurar sisetemas operativos" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Instalar e configurar sisetemas operativos</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.04-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/msoad.png" alt="manutenção de sistemas operativos, aplicativos e dispositivos"
-                  width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Manutenção de sistemas operativos, aplicativos e dispositivos</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.05-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/msoad.png" alt="manutenção de sistemas operativos, aplicativos e dispositivos" width="100%"
+                height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Manutenção de sistemas operativos, aplicativos e dispositivos</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.05-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cfr.png" alt="conhecer fundamentos de redes" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Conhecer fundamentos de redes</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.06-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cfr.png" alt="conhecer fundamentos de redes" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Conhecer fundamentos de redes</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.06-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cgrpd.png" alt="criação e gestão de uma rede de pequena dimensão" width="100%"
-                  height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Criação e gestão de uma rede de pequena dimensão</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.07-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cgrpd.png" alt="criação e gestão de uma rede de pequena dimensão" width="100%"
+                height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Criação e gestão de uma rede de pequena dimensão</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.07-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cfs.png" alt="conhecer fundamentos de segurança" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Conhecer fundamentos de segurança</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.08-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cfs.png" alt="conhecer fundamentos de segurança" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Conhecer fundamentos de segurança</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.08-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/gssc.png" alt="gerir segurança de sistemas de computadores" width="100%"
-                  height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Gerir segurança de sistemas de computadores</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.09-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/gssc.png" alt="gerir segurança de sistemas de computadores" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Gerir segurança de sistemas de computadores</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.09-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cqsmaatsi.png"
-                  alt="conhecer Questões de segurança e meio Ambiente das actividades de um tecnico de suporte Informático"
-                  width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Conhecer Questões de segurança e meio Ambiente das actividades de um tecnico de
-                  suporte Informático</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.10-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cqsmaatsi.png"
+                alt="conhecer Questões de segurança e meio Ambiente das actividades de um tecnico de suporte Informático"
+                width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Conhecer Questões de segurança e meio Ambiente das actividades de um tecnico de
+                suporte Informático</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.10-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/cpwe.png" alt="construir páginas web estáticas" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Construir páginas web estáticas</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a href="docs/VE.011-manual-Aluno.docx"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/cpwe.png" alt="construir páginas web estáticas" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Construir páginas web estáticas</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="docs/VE.011-manual-Aluno.docx"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <a><img src="img/help.svg" alt="Livro Misterioso" width="100%" height="245"></a>
-              <div class="card-body">
-                <p class="card-text">Livro Misterioso</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a class="pb-5" href="#"><button type="button"
-                        class="btn btn-sm btn-outline-secondary">Transferir</button></a>
-                  </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a><img src="img/help.svg" alt="Livro Misterioso" width="100%" height="245"></a>
+            <div class="card-body">
+              <p class="card-text">Livro Misterioso</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="pb-5" href="#"><button type="button"
+                      class="btn btn-sm btn-outline-secondary">Transferir</button></a>
                 </div>
               </div>
             </div>
@@ -250,17 +254,16 @@
         </div>
       </div>
     </div>
-  </ul>
+  </div>
 
-  <footer>
-    <div class="container ">
-      <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
+  <footer class="bg-dark">
+    <div class="container">
+      <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </div>
   </footer>
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script>
     pesquisa_input = document.querySelectorAll(".pesquisa");
 
@@ -286,3 +289,7 @@
 </body>
 
 </html>
+
+<!--
+    
+-->

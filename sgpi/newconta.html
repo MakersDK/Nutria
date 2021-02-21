@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width initial-scale=1">
     <!--<link rel="manifest" href="manifest.json">-->
     <link rel="icon" href="icon.png">
@@ -111,7 +112,7 @@
             
             <div class="input-group">
                 <span class="input-group-text" id="emailAddon">@</span>
-                <input class="form-control  mb-2" type="email" name="email" id="inputEmail" placeholder="Enter Email"
+                <input class="form-control  mb-2" type="email" name="email" id="inputemail" placeholder="Enter Email"
                     aria-describedby="emailAddon" required>
             </div>
             <label class="visually-hidden" for="inputpasswd">Password</label>
@@ -128,6 +129,7 @@
             </div>
         </form>  
     </main>
+    
     <footer class="bg-dark">
         <div class="container">
             <p class="mt-2  mb-3 text-muted text-center">&copy; 2020-2021</p>
@@ -183,8 +185,8 @@
             var pwd = document.getElementById("confirpwd").innerHTML = '<div class="input-group"><span class="input-group-text" id = "passwdAddon" ><img src="img/lock.svg"></span><input class="form-control " type="password" name="reppassword" minlength="7" id="inputpwd" placeholder="Repetir-senha" aria -describedby="passwdAddon" maxlength = "15" required></div><div class="showpass"><div class="form-check "><input class="form-check-input" type="checkbox" id="check" onclick="showpass()"></input><label class="form-check-label" for="check">Mostrar palavra-passe</label></div></div>'
         }
         function showpass() {
-            var senha = window.document.getElementById('inputpasswd')
-            var repwd = window.document.getElementById('inputpwd')
+            let senha = window.document.getElementById('inputpasswd')
+            let repwd = window.document.getElementById('inputpwd')
             if (senha.type == "password") {
                 senha.type = "text"
             } else {
@@ -204,6 +206,7 @@
                 document.getElementById("feedback").innerHTML='<div class="alert alert-success" id="alert">Senhas Compativeis</div>'
                 
              }else{
+                document.getElementById("inputpwd").innerHTML=''
                 document.getElementById("feedback").innerHTML='<div class="alert alert-danger" id="alert">Senhas Incompativeis</div>'
              }
         }
