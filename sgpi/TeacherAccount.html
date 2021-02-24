@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<link rel="manifest" href="manifest.json">-->
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Verena</title>
+    <title>Upload</title>
 
     <style>
         html,
@@ -17,17 +17,9 @@
         }
 
         body {
-            display: flex;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .form-signup {
+            margin-top: 80px;
+            position: fixed;
             width: 100%;
-            max-width: 330px;
-            padding: 15px;
-            margin: auto;
         }
 
         footer {
@@ -41,9 +33,16 @@
             margin: 12px;
         }
 
+
         .navbar-toggler {
             margin-right: 2%;
         }
+
+        .container {
+            text-align: center;
+
+        }
+
     </style>
 
 </head>
@@ -60,9 +59,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="text-center collapse navbar-collapse" id="navbarCollapse">
-                <a class="text-light aria-current=" href="index.html"><img src="img/arrow-left.svg" alt="Voltar"
-                        width="25px"></a>
-                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
+                <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg"
+                        alt="Voltar" width="25px"></a>
+                <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="student"
                         width="25px"></a>
                 <a class="text-light aria-current=" href="conta.html"><img src="img/login.svg" alt="login"
                         width="25px"></a>
@@ -71,18 +70,7 @@
             </div>
         </nav>
     </header>
-    <main class="form-signup">
-        <form>
-            <div class="form-group">
-                <label class="visually-hidden" for="inputNumber">Número do documento</label>
-                <input class="form-control form-control-lg" type="text" id="inputNumber" placeholder="Número" required>
-                <small class="form-text text-muted">O número de documento que usou na matrícula recentemente</small>
-            </div>
-            <hr>
-
-            <button class="btn btn-primary btn-lg w-100" type="submit">Consultar</button>
-        </form>
-    </main>
+    
     <footer class="bg-dark">
         <div class="container">
             <p class="mt-2 mb-3 text-muted text-center">&copy; 2020-2021</p>
@@ -91,6 +79,8 @@
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

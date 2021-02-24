@@ -48,8 +48,8 @@
             font-weight: 900;
             font-size: 40px;
         }
-        input[type="text"]:focus
-{
+
+        input[type="text"]:focus {
             border-radius: 10px;
             border-color: white;
         }
@@ -69,6 +69,7 @@
         #check {
             margin-right: 10px;
         }
+
         #alert {
             padding: 10px;
             padding-left: 20px;
@@ -81,7 +82,10 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand p-1" href="#">Verena</a>
+            <h1 class="d-flex align-items-center fs-4 text-white mb-0">
+                <img src="/img/verena.png" width="60" class="p-2" alt="Verena">
+                verena
+              </h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -109,7 +113,7 @@
                 <input class="form-control  mb-2" type="text" name="email" id="inputEmail" placeholder="Username"
                     required>
             </div>
-            
+
             <div class="input-group">
                 <span class="input-group-text" id="emailAddon">@</span>
                 <input class="form-control  mb-2" type="email" name="email" id="inputemail" placeholder="Enter Email"
@@ -123,13 +127,14 @@
                     maxlength="15" required>
             </div>
             <div class="mt-2 ml-2" id="confirpwd"></div>
-            <small class="form-text text-muted" id="feedback">Crie uma palavra-passe forte, com uma mistura de letras, números e símbolos especias</small>
+            <small class="form-text text-muted" id="feedback">Crie uma palavra-passe forte, com uma mistura de letras,
+                números e símbolos especias</small>
             <div class="mt-2" id="errosenha"></div>
-            <input class="mt-2 btn btn-primary w-100" type="submit" onclick="comprep()"></input>
+            <input class="mt-2 btn btn-primary w-100" type="submit" id="btnV"></input>
             </div>
-        </form>  
+        </form>
     </main>
-    
+
     <footer class="bg-dark">
         <div class="container">
             <p class="mt-2  mb-3 text-muted text-center">&copy; 2020-2021</p>
@@ -198,19 +203,20 @@
                 repwd.type = "password"
             }
         }
-        function comprep() {
-             var senha = document.getElementById("inputpasswd").value
-             var repsenha = document.getElementById("inputpwd").value
-  
-             if (senha === repsenha){
-                document.getElementById("feedback").innerHTML='<div class="alert alert-success" id="alert">Senhas Compativeis</div>'
-                
-             }else{
-                document.getElementById("inputpwd").innerHTML=''
-                document.getElementById("feedback").innerHTML='<div class="alert alert-danger" id="alert">Senhas Incompativeis</div>'
-             }
+        btnV.addEventListener('click', (e) => {
+        const btnV = document.getElementById("btnV")
+        const senha = document.getElementById("inputpasswd").value
+        const repsenha = document.getElementById("inputpwd").value
+
+        if (senha === repsenha) {
+            document.getElementById("feedback").innerHTML = '<div class="alert alert-success" id="alert">Senhas Compativeis</div>'
+
+        } else {
+            e.preventDefault()
+            document.getElementById("feedback").innerHTML = '<div class="alert alert-danger" id="alert">Senhas Incompativeis</div>'
         }
-         
+            })
+
     </script>
 </body>
 

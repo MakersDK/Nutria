@@ -42,7 +42,6 @@
             text-align: center;
 
         }
-
     </style>
 
 </head>
@@ -50,13 +49,16 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand p-1" href="#">Verena</a>
+            <h1 class="d-flex align-items-center fs-4 text-white mb-0">
+                <img src="/img/verena.png" width="60" class="p-2" alt="Verena">
+                verena
+            </h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="text-center collapse navbar-collapse" id="navbarCollapse">
-                <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg"
+                <a class="text-light aria-current=" href="StudentAccount.html"><img src="img/arrow-left.svg"
                         alt="Voltar" width="25px"></a>
                 <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="student"
                         width="25px"></a>
@@ -72,25 +74,20 @@
 
     <div class="container " id="containerSite">
 
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button"
-                    role="tab" aria-controls="student" aria-selected="true">student</button>
+                <button class="nav-link active " data-bs-toggle="modal" data-bs-target="#ModalStudent"
+                    type="button">Student</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher" type="button"
-                    role="tab" aria-controls="teacher" aria-selected="false">teacher</button>
+                <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#ModalTeacher"
+                    type="button">Teacher</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="employee-tab" data-bs-toggle="tab" data-bs-target="#employee" type="button"
-                    role="tab" aria-controls="employee" aria-selected="false">employee</button>
+                <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#ModalEmployee"
+                    id="bt" type="button">Employee</button>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">...</div>
-            <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">...</div>
-            <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab">...</div>
-        </div>
 
         <!--Div Modal for Student-->
         <div class="modal fade " id="ModalStudent" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -98,25 +95,27 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <div id="localerrno"><div class="alert alert-danger" id="alert">Desculpe, isto não funcionou, Por gentileza, Tente novamente</div></div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="pagelogin.html" method="GET">
+                        <form action="StudentAccount.html" method="GET">
                             <div class="form-group row mb-2">
-                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <label for="email" class="col-2 col-form-label" autocomplete>Email</label>
                                 <div class="col-10">
-                                    <input type="email" class="form-control" id="email1" placeholder="Email">
+                                    <input type="email" class="form-control" id="email1" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="password" class="col-2 col-form-label">Senha</label>
                                 <div class="col-10">
-                                    <input type="password" class="form-control" id="password1" placeholder="Password">
+                                    <input type="password" id="psenha1" class="form-control" id="password1"
+                                        placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="p-2 form-group row">
                                 <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
-                                    value="Entrar">
+                                value="Entrar">
                             </div>
                         </form>
                     </div>
@@ -130,25 +129,27 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <div id="localerrno"></div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="pagelogin.html" method="GET">
+                        <form action="TeacherAccount.html" method="GET">
                             <div class="form-group row mb-2">
-                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <label for="email" class="col-2 col-form-label" autocomplete>Email</label>
                                 <div class="col-10">
-                                    <input type="email" class="form-control" id="email2" placeholder="Email">
+                                    <input type="email" class="form-control" id="email2" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="password" class="col-2 col-form-label">Senha</label>
                                 <div class="col-10">
-                                    <input type="password" class="form-control" id="password2" placeholder="Password">
+                                    <input type="password" id="psenha2" class="form-control" id="password2"
+                                        placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="p-2 form-group row">
                                 <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
-                                    value="Entrar">
+                                value="Entrar">
                             </div>
                         </form>
                     </div>
@@ -161,25 +162,27 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="ModalLabel">Inicie Sessão</h5>
+                        <div id="localerrno"></div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="pagelogin.html" method="GET">
+                        <form action="EmployeeAccount.html" method="GET">
                             <div class="form-group row mb-2">
-                                <label for="email" class="col-2 col-form-label">Email</label>
+                                <label for="email" class="col-2 col-form-label" autocomplete>Email</label>
                                 <div class="col-10">
-                                    <input type="email" class="form-control" id="email3" placeholder="Email">
+                                    <input type="email" class="form-control" id="email3" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="password" class="col-2 col-form-label">Senha</label>
                                 <div class="col-10">
-                                    <input type="password" class="form-control" id="password3" placeholder="Password">
+                                    <input type="password" id="psenha3" class="form-control" id="password3"
+                                        placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="p-2 form-group row">
                                 <input type="submit" class="col-3 col-form-input my-2 mb-0  btn btn-outline-success"
-                                    value="Entrar">
+                                value="Entrar">
                             </div>
                         </form>
                     </div>
@@ -198,10 +201,25 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        bt.addEventListener('submit', (e) => {
+            const email1 = document.getElementById("email1")
+            const email2 = document.getElementById("email2")
+            const email3 = document.getElementById("email3")
+            const psenha1 = document.getElementById("psenha1")
+            const psenha2 = document.getElementById("psenha2")
+            const psenha3 = document.getElementById("psenha3")
+            alert("testando")
+            e.preventDefault()
+            if ((email1.value.length) || (email2.value.length) || (email3.value.length) || (psenha1.value.length) || (psenha2.value.length) || (psenha3.value.length)) {
+                document.getElementById("localerrno").innerHTML = '<div class="alert alert-danger" id="alert">Desculpe, isto não funcionou, Por gentileza, Tente novamente</div>'
+            }
+            setTimeout(() => {
+                document.getElementById("localerrno").innerHTML = ''
+            },3000)
+        })        
+    </script>
 
 </body>
 
 </html>
-<!--
-   
--->

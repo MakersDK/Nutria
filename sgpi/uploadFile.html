@@ -69,13 +69,16 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand p-1" href="#">Verena</a>
+            <h1 class="d-flex align-items-center fs-4 text-white mb-0">
+                <img src="/img/verena.png" width="60" class="p-2" alt="Verena">
+                verena
+              </h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="text-center collapse navbar-collapse" id="navbarCollapse">
-                <a class="text-light aria-current=" href="studentAccount.html"><img src="img/arrow-left.svg"
+                <a class="text-light aria-current=" href="StudentAccount.html"><img src="img/arrow-left.svg"
                         alt="Voltar" width="25px"></a>
                 <a class="text-light aria-current=" href="index.html"><img src="img/home.svg" alt="home"
                         width="25px"></a>
@@ -90,15 +93,15 @@
 
     <div id="uploaded" class="position-relative text-center bg-light">
         <div class="col-md-5 mx-auto">
-            <img src="img/cloud-upload.svg" alt="Fazer upload" id="image">
+            <div><img src="img/cloud-upload.svg" alt="Fazer upload" id="image"></div>
             <h1 class="display-4 fw-normal">Faça Upload</h1>
             <p class="lead fw-normal">Garanta uma boa vistoria e analise dos seus projectos, Partilhe seus projectos com
                 o formador responsável por analisar o projeto. e garanta a classificação do mesmo</p>
             <form action="#" method="GET">
-                <input type="file" name="upload" id="files" accept=".zip,.docx,.odt,.pdf">
-                <input type="submit" class="btn btn-primary" onclick="alerta()" value="Pedir Acompanhamento"></input>
+                <input type="file" name="upload" id="files" accept=".jpg,.png,.svg">
+                <input type="submit" class="btn btn-primary" id="bt" value="Pedir Acompanhamento"></input>
             </form>
- 
+
         </div>
 
     </div>
@@ -111,65 +114,45 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-        var img = window.document.getElementById("image")
-        var file = window.document.getElementById("files")
-
+        let file = window.document.getElementById("files")
+        let img = window.document.getElementById("image")
         img.addEventListener('click', () => {
             file.click();
         })
         file.addEventListener('change', (event) => {
             let reader = new FileReader()
-            
+
             reader.onloadend = () => {
                 img.src = reader.result
             }
             reader.readAsDataURL(file.files[0])
-            
+
         })
-        function alerta() {
-            setTimeout(function alertaa() {
-                document.getElementById("barralert").innerHTML = '<div class="alert alert-success" id="alert">SUCCESSFULLY UPLOADED!!!</div>'
-            }, 1000)
-        }
+        bt.addEventListener('click', (e) => {
+            if (file.value.length == 0) {
+                e.preventDefault()
+                document.getElementById("barralert").innerHTML='<div class="alert alert-danger" id="alert">Desculpe, isto não funcionou, Por gentileza, Tente novamente</div>'
+
+                setTimeout(() => {
+                    document.getElementById("barralert").innerHTML=''
+                },3000)
+            } else {
+                let bt = document.getElementById("bt")
+                img.src = "/img/cloud-check.svg"
+                document.getElementById("barralert").innerHTML='<div class="alert alert-success" id="alert">SUCCESSFULLY UPLOADED!!</div>'
+
+                setTimeout(() => {
+                    img.src = "/img/cloud-upload.svg"
+                    document.getElementById("barralert").innerHTML=''
+                }, 4000)
+            }
+        })
+
+
+
 
 
     </script>
 </body>
 
 </html>
-<!--
-    <div class="container">
-         Button trigger modal 
-
-        <div class="btn-group " id="btn_group" role="group" aria-label="Basic radio toggle button group" data-bs-toggle="modal"
-            data-bs-target="#extruturamodal">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio1">Student Account</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Teacher Account</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">employee Account</label>
-        </div>
-
-        Modal 
-        <div class="modal fade " id="extruturamodal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal--sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel">Student Account</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Ok</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
